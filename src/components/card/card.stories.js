@@ -11,4 +11,4 @@ export default {
 export const CardOffers = () => offers;
 export const CardSriLanken = () => sriLanken;
 export const Template = () => cardtemplate;
-
+CardSriLanken.parameters = { layout: "fullscreen" };
