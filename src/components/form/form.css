@@ -1,0 +1,25 @@
+.btn {
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: white;
+  background: #aaaaaa;
+  border: none;
+  padding: 10px 20px;
+}
+.verify {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 30px;
+  text-align: center;
+}
+allinputs {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  column-gap: 20px;
+}
+.password::placeholder {
+  text-emphasis: center;
+  font-size: 18px;
+}
