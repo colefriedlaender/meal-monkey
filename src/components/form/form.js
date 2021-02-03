@@ -1,22 +1,30 @@
 export function createRegisterForm() {
-    const form =document.createElement("form")
-    form.className = "form"
-    
-    const button = document.createElement("button");
-    button.classList.add("btn")
-    button.innerText = "Sign In";
+  const form = document.createElement("form");
+  form.className = "form";
 
-    function login(){
-        alert("Loged In");
-    }
-    button.addEventListener("click", login,);
-    
-    const title =document.createElement("h2")
-    title.innerText = "Reset Password"
-    
-    const hint =document.createElement("h2")
-    hint.innerText = "Please enter your Email to reset yout Password"
+  const button = document.createElement("button");
+  button.innerText = "Register";
+  button.className = "btn";
 
-    form.append(title, hint, button)
-    return form;
+  function register() {
+    alert("Registered");
   }
+
+  button.addEventListener("click", register);
+
+  const title = document.createElement("h2");
+  title.innerText = "Reset Password";
+
+  const text = document.createElement("p");
+  text.innerText =
+    "Please enter your email to receive a link to create a new password via email";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Email";
+  input.className = "input";
+
+  form.append(title, text, input, button);
+
+  return form;
+}
