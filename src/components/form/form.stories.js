@@ -1,6 +1,7 @@
 import "./form.css";
 import { createRegisterForm } from "./form";
 import { createVerifyForm } from "./verify-form";
+import { createNewFrom } from "./new-form";
 
 export default {
   title: "Components/Form",
@@ -9,3 +10,4 @@ export default {
 
 export const register = () => createRegisterForm();
 export const verify = () => createVerifyForm();
+export const newform = () => createNewFrom();

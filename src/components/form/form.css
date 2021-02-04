@@ -29,3 +29,10 @@
 .form__otp input::placeholder {
   opacity: 50%;
 }
+.message {
+  color: red;
+  height: 16px;
+}
+.form__otp::placeholder {
+  text-align: center;
+}
