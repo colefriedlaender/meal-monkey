@@ -11,7 +11,24 @@ function createOTPInputElement() {
   return input;
 }
 
-function createPasswordContainerElement() {
+export function createVerifyForm() {
+  const form = createElement("form", {
+    className: "form",
+    onsubmit: function (event) {
+      event.preventDefault();
+
+      const secretPassword = 1111;
+      const password =
+        otpOne.value + otpTwo.value + otpThree.value + otpFour.value;
+
+      if (password == secretPassword) {
+        alert("Password is correct");
+      } else {
+        alert("Not");
+      }
+    },
+  });
+
   const otpOne = createOTPInputElement();
   const otpTwo = createOTPInputElement();
   const otpThree = createOTPInputElement();
@@ -22,29 +39,24 @@ function createPasswordContainerElement() {
     children: [otpOne, otpTwo, otpThree, otpFour],
   });
 
-  return passwordContainer;
-}
+  const title = createElement("h2", {
+    innerText: "We have sent an OTP to your mobile",
+  });
 
-export function createVerifyForm() {
-  const form = document.createElement("form");
-  form.className = "form";
+  const text = createElement("p", {
+    innerText:
+      "Please check your mobile number 071*****12 continue to reset your password",
+  });
 
-  const title = document.createElement("h2");
-  title.innerText = "We have sent an OTP to your Mobile";
+  const button = createElement("button", {
+    innerText: "Next",
+    className: "btn",
+  });
 
-  const text = document.createElement("p");
-  text.innerText =
-    "Please check your mobile number 071*****12 continue to reset your password";
-
-  const passwordContainer = createPasswordContainerElement();
-
-  const button = document.createElement("button");
-  button.innerText = "Next";
-  button.className = "btn";
-
-  const hint = document.createElement("p");
-  hint.innerText = "Didn't Receive?";
-  hint.className = "form__hint";
+  const hint = createElement("p", {
+    innerText: "Didn't Receive?",
+    className: "from__hitn",
+  });
 
   const resendLink = document.createElement("a");
   resendLink.innerText = "Click Here";
