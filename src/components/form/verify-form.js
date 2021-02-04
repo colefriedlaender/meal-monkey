@@ -1,23 +1,26 @@
+import { createElement } from "../utils/creatElemet";
+
 function createOTPInputElement() {
-  const input = document.createElement("input");
-  input.type = "password";
-  input.placeholder = "*";
-  input.className = "input";
-  input.maxLength = "1";
+  const input = createElement("input", {
+    className: "input",
+    placeholder: "*",
+    type: "password",
+    maxLength: "1",
+  });
 
   return input;
 }
 
 function createPasswordContainerElement() {
-  const passwordContainer = document.createElement("div");
-  passwordContainer.className = "form__otp";
-
   const otpOne = createOTPInputElement();
   const otpTwo = createOTPInputElement();
   const otpThree = createOTPInputElement();
   const otpFour = createOTPInputElement();
 
-  passwordContainer.append(otpOne, otpTwo, otpThree, otpFour);
+  const passwordContainer = createElement("div", {
+    className: "form__otp",
+    children: [otpOne, otpTwo, otpThree, otpFour],
+  });
 
   return passwordContainer;
 }
